@@ -13,6 +13,8 @@
 
 ### booleans
 
+can be `True` or `False`
+
 AND
 ```
 if i < 5 and i > 0:
@@ -242,6 +244,82 @@ else:
     print("B")
 ```
 
+## classes
+
+class definition (convention: first letter uppercase)  
+methods always take self as first parameter
+```
+class User:
+    # constructor
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def namechange(self, newname):
+        self.name = newname
+    
+    def older(self):
+        self.age += 1
+```
+
+create an instance of the class  
+access attributes with dot notation (not brackets like dictionaries)  
+method calls implicitly pass self
+```
+john = User("John", 42)
+print(john.age)
+john.older()
+```
+
+class attributes, class methods, static methods are all called from the class, not an instance (no self) 
+class methods take **cls** as an implicit argument and thus can reference class attributes
+static methods do not have an implicit argument
+```
+class User:
+    population = 0 #class attribute
+
+    # constructor
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        User.population += 1 #change the class attribute
+    
+    @classmethod
+    def how_many(cls):
+        print(f"{cls.population} users")
+    
+    @staticmethod
+    def about():
+        print("The User class represents a user")
+
+users = [User("John",42), User("James",32), User("Jim", 27)]
+
+print(User.population)
+User.how_many()
+User.about()
+```
+
+inheritance: Gigachad inherits from User  
+overwrites older()
+```
+class Gigachad(User):
+    #constructor
+    def __init__(self):
+        #call parent constructor
+        super().__init__("Billy Badass", 23)
+        #attribute the parent class doesn't have
+        self.muscles = True
+    #overwrite has no special syntax
+    def older(self)
+        print("Gigachads don't get older")
+```
+
+can make a function virtual by making the parent class version throw an error
+```
+    def taunt(self):
+        raise NotImplementedError
+```
+
 # Common Functions
 
 print something
@@ -316,4 +394,26 @@ stuff.sort()
 empty the list
 ```
 stuff.clear()
+```
+
+# Modules
+
+modules are just python libraries; they are python files with a bunch of functions  
+modules are imported as *modulename*, runs the code in the file once  
+you can make your own modules just by having functions in a separate *modulename*.py file  
+the functions are called as *modulename.functionname* such as
+```
+import random
+print(random.randint(1,10))
+```
+
+## packages
+
+packages are folders with modules in them; to import a module in a package,
+```
+import packagename.modulename
+```
+OR
+```
+from packagename import modulename
 ```
