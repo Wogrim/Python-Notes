@@ -1,3 +1,10 @@
+# Funky Features
+
+- newlines and indentation determine control flow
+- list comprehensions: fancy way to build a list
+- list and string slicing
+- integers can be as big as you have memory to hold them
+
 # Data Types and Variables
 
 - variables are not explicitly declared (just assign stuff to them)
@@ -6,10 +13,19 @@
 
 ## primitives
 
-### ints
+### numbers: int, float, complex
 
+integer division and remainder and float division
+```
+x = 5//3
+x = 5%3
+x = 5/3
+```
 
-### floats
+power
+```
+twentyfive = 5**2
+```
 
 ### booleans
 
@@ -25,7 +41,7 @@ OR
 if i < 5 or i > 10:
 ```
 
-NOT
+NOT (unary)
 ```
 if not i < 5:
 ```
@@ -34,8 +50,24 @@ if not i < 5:
 
 strings are immutable
 
-you can access characters from a string with an index like a list  
-also strings can be sliced like a list
+you can read specific characters from a string with an index like a list  
+also strings can be sliced like a list (see below)
+
+get the length
+```
+length = len("abcdef")
+```
+
+f-strings: make a string with inserted values
+```
+print(f"Hello {name}")
+```
+
+string split (default separator space), join
+```
+wordlist = "I like cookies".split()
+hyphenated = "-".join(wordlist)
+```
 
 ## composites
 
@@ -122,9 +154,10 @@ if "Joe" not in scores:
 ```
 (or without "not")
 
-pop a dictionary value out of the dictionary
+pop a dictionary value out of the dictionary, default value if it is not in the dictionary
 ```
 val = scores.pop("Bob")
+val = scores.pop("Bob", default=0)
 ```
 
 delete a dictionary entry without doing anything with the value
@@ -151,7 +184,6 @@ for name, score in scores.items():
 
 # synatax
 
-- control flow of Python based on colons, new lines and indentation (not brackets)
 - no semicolon at the end of each line
 - `pass` = empty statement (required for empty loop)
 
@@ -320,7 +352,13 @@ can make a function virtual by making the parent class version throw an error
         raise NotImplementedError
 ```
 
+## exceptions
+
+*TODO*
+
 # Common Functions
+
+## input and output
 
 print something
 ```
@@ -334,6 +372,9 @@ print multiple things with a different separator
 ```
 print("hi", "bye", sep=",")
 ```
+
+get the input (as a string)
+x = input()
 
 ## sequence functions
 
