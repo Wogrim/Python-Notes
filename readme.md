@@ -202,6 +202,14 @@ doSomething()
 doSomething(story=5)
 ```
 
+to make a function with variable number of arguments, use splat operator (*)  
+any arguments past the regular ones are packed in a tuple in the splatted parameter
+```
+def printextraarguments(num, name, *extras):
+    for extra in extras:
+        print(extra)
+```
+
 ## loops
 
 loop through i from 0 through 19  
@@ -373,8 +381,14 @@ print multiple things with a different separator
 print("hi", "bye", sep=",")
 ```
 
-get the input (as a string)
-x = input()
+to receive user input, always gives a string
+```
+input()
+```
+to first display a prompt so the user knows what to type
+```
+input("Enter age: ")
+```
 
 ## sequence functions
 
