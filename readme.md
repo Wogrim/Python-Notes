@@ -1,4 +1,62 @@
-# Funky Features
+# Getting Started
+
+download Python from [python.org](https://www.python.org/downloads/)
+
+during install, make sure to add to PATH so the command can be used in the terminal from anywhere
+
+you can access the python interpreter in the terminal with `python` or `py` (maybe different on different versions)
+
+or write some code in a **hello_world.py** file
+```
+#hello_world.py
+
+print("hello world!")
+```
+and run the code from the terminal with
+```
+py hello_world.py
+```
+
+**pip** should be installed (and put in PATH) by default with Python installation
+- pip is a terminal command for installing packages from [pypi.org](https://pypi.org/)
+
+one-time installation of **pipenv** on your computer for putting your projects in virtual environments for dependency management
+```
+pip install pipenv
+```
+
+for a project, install packages it needs with pipenv, which will be tracked in *Pipfile*
+```
+pipenv install Flask
+```
+(this installs the Flask package for the virtual environment for the current folder)
+
+in your code, use what you need from the package
+```
+#server.py
+from flask import Flask
+
+app = Flask(__name__)
+
+if __name__ == "__main__"":
+    app.run(debug = True)
+```
+
+or if you copy your project to another computer, to install the dependencies from the Pipfile
+```
+pipenv install
+```
+
+run the virtual environment and your code with
+```
+pipenv shell
+py server.py
+```
+
+- stop your code with **Ctrl + C**
+- leave the virtual environment with `exit`
+
+# Funky Features of Python
 
 - newlines and indentation determine control flow
 - list comprehensions: fancy way to build a list
@@ -8,8 +66,7 @@
 # Data Types and Variables
 
 - variables are not explicitly declared (just assign stuff to them)
-- (can make it harder to spot typos because no "undeclared" error)
-- 
+  - can make it harder to spot typos because no "undeclared" error
 
 ## primitives
 
