@@ -59,8 +59,8 @@ py server.py
 # Funky Features of Python
 
 - newlines and indentation determine control flow
-- list comprehensions: fancy way to build a list
-- list and string slicing
+- list comprehensions: fancy way to build a list (which is an array)
+- list and string slicing and lots of built-in methods make common operations very easy
 - integers can be as big as you have memory to hold them
 
 # Data Types and Variables
@@ -105,10 +105,15 @@ if not i < 5:
 
 ### strings
 
-strings are immutable
+- you can read specific characters from a string with an index like a list
+- strings are immutable
+- also strings can be sliced like a list (see below)
 
-you can read specific characters from a string with an index like a list  
-also strings can be sliced like a list (see below)
+use single or double quotes for strings
+```
+string1 = "help"
+string2 = 'help'
+```
 
 get the length
 ```
@@ -120,7 +125,13 @@ f-strings: make a string with inserted values
 print(f"Hello {name}")
 ```
 
-string split (default separator space), join
+string concatenation, need to explicitly convert numbers to strings
+```
+print("Hello " + name)
+print("I am " + str(age) + " years old")
+```
+
+string split (default separator space) into a list of strings, join with hyphens
 ```
 wordlist = "I like cookies".split()
 hyphenated = "-".join(wordlist)
@@ -174,7 +185,7 @@ slicing with step value (in this case every second index)
 stuff[1::2]
 ```
 
-unpack a list as comma-separated arguments to a function  
+unpack a list as comma-separated arguments to a function (printing with a ', ' between them)
 ```
 print(*stuff,sep=", ")
 ```
