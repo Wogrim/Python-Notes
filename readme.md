@@ -59,6 +59,7 @@ py server.py
 # Funky Features of Python
 
 - newlines and indentation determine control flow
+  - tabs OR spaces for indentation; a mix will cause errors
 - list comprehensions: fancy way to build a list (which is an array)
 - list and string slicing and lots of built-in methods make common operations very easy
 - integers can be as big as you have memory to hold them
@@ -148,6 +149,7 @@ square brackets makes a list:
 stuff = ["red", "yellow", "green", "blue"]
 ```
 
+- same idea as an 'array' in other languages
 - zero-indexed
 - heterogenous (can have a mix of data types)
 - allows negative index (-1 is last)
@@ -201,7 +203,7 @@ similar to a list, but
 
 ### dictionaries
 
-map keys to values (hash table)  
+map keys to values (hash table / hash map)  
 it is uncommon to use anything other than a string for the key
 ```
 scores = {
@@ -460,7 +462,7 @@ input("Enter age: ")
 
 ## sequence functions
 
-these work on lists, tuples, strings, and maybe dictionaries?
+these work on lists, tuples, strings, and dictionaries (gives the keys)
 
 get the number of elements in the sequence  
 ```
