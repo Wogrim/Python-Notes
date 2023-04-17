@@ -199,7 +199,7 @@ also see list-specific functions
 similar to a list, but
 - immutable
 - use parentheses instead of square brackets when creating tuples
-- (parentheses technically not required)
+- (parentheses technically not required in most situations)
 
 ### dictionaries
 
@@ -272,10 +272,11 @@ doSomething()
 doSomething(story=5)
 ```
 
-to make a function with variable number of arguments, use splat operator (*)  
-any arguments past the regular ones are packed in a tuple in the splatted parameter
+variadics
+- to make a function with variable number of arguments, use splat operator (*)
+- any arguments past the regular ones are packed in a tuple in the splatted parameter
 ```
-def printextraarguments(num, name, *extras):
+def printExtraArguments(num, name, *extras):
     for extra in extras:
         print(extra)
 ```
@@ -431,6 +432,28 @@ can make a function virtual by making the parent class version throw an error
 ```
 
 ## exceptions
+
+python uses **try-except** instead of *try-catch*
+```
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print("don't divide by zero, dummy")
+```
+
+you can use **try-except-else** for it to run the code in *else* if the try is successful
+```
+try:
+    print(a/b)
+except ZeroDivisionError:
+    print("don't divide by zero, dummy")
+else:
+    print("what else you got?")
+```
+
+common exceptions:
+- ZeroDivisionError
+- FileNotFoundError
 
 *TODO*
 
